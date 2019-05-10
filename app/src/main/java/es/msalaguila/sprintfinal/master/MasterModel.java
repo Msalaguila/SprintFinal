@@ -17,11 +17,6 @@ public class MasterModel implements MasterContract.Model {
   public static String TAG = MasterModel.class.getSimpleName();
 
   private RepositoryContract repository;
-  private int id = 0;
-  private int clicksTotales = 0;
-  private int clicksPerItem = 0;
-
-
 
   public MasterModel(RepositoryContract repository) {
     this.repository = repository;
