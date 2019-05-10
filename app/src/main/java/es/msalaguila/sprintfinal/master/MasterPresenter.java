@@ -81,5 +81,11 @@ public class MasterPresenter implements MasterContract.Presenter {
     });
   }
 
+  @Override
+  public void selectMasterItemData(MasterItem item) {
+    router.passMasterItemToNextScreen(item);
+    router.navigateToNextScreen();
+  }
+
 
 }

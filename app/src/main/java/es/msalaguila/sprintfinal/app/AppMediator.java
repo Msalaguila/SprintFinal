@@ -10,6 +10,8 @@ public class AppMediator extends Application {
   private MasterState masterState = new MasterState();
   private DetailState detailState = new DetailState();
 
+  private MasterItem masterItem;
+
   public void setMasterState(MasterState state) {
     this.masterState = state;
   }
@@ -24,5 +26,13 @@ public class AppMediator extends Application {
 
   public DetailState getDetailState() {
     return detailState;
+  }
+
+  public MasterItem getMasterItem() {
+    return masterItem;
+  }
+
+  public void setMasterItem(MasterItem item) {
+    this.masterItem = item;
   }
 }

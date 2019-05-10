@@ -59,7 +59,7 @@ public class MasterActivity
               @Override
               public void onClick(View view) {
                 MasterItem item = (MasterItem) view.getTag();
-                // presenter.selectTeamListData(item);
+                presenter.selectMasterItemData(item);
               }
             })
     );

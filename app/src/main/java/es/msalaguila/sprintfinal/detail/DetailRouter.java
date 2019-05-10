@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.msalaguila.sprintfinal.app.AppMediator;
+import es.msalaguila.sprintfinal.app.MasterItem;
 
 public class DetailRouter implements DetailContract.Router {
 
@@ -32,5 +33,11 @@ public class DetailRouter implements DetailContract.Router {
   public DetailState getDataFromPreviousScreen() {
     DetailState state = mediator.getDetailState();
     return state;
+  }
+
+  @Override
+  public MasterItem getMasterItemFromPreviousScreen() {
+    MasterItem item = mediator.getMasterItem();
+    return item;
   }
 }

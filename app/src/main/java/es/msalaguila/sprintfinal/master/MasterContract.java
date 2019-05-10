@@ -26,6 +26,8 @@ interface MasterContract {
     void fetchMasterItemsData();
 
     void addNewMasterItem();
+
+    void selectMasterItemData(MasterItem item);
   }
 
   interface Model {
@@ -42,5 +44,7 @@ interface MasterContract {
     void passDataToNextScreen(MasterState state);
 
     MasterState getDataFromPreviousScreen();
+
+    void passMasterItemToNextScreen(MasterItem item);
   }
 }

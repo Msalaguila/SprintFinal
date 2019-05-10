@@ -2,6 +2,8 @@ package es.msalaguila.sprintfinal.detail;
 
 import java.lang.ref.WeakReference;
 
+import es.msalaguila.sprintfinal.app.MasterItem;
+
 interface DetailContract {
 
   interface View {
@@ -18,6 +20,8 @@ interface DetailContract {
     void injectRouter(Router router);
 
     void fetchData();
+
+    void fetchMasterItemData();
   }
 
   interface Model {
@@ -30,5 +34,7 @@ interface DetailContract {
     void passDataToNextScreen(DetailState state);
 
     DetailState getDataFromPreviousScreen();
+
+    MasterItem getMasterItemFromPreviousScreen();
   }
 }

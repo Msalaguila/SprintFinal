@@ -4,6 +4,8 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.msalaguila.sprintfinal.app.MasterItem;
+
 public class DetailPresenter implements DetailContract.Presenter {
 
   public static String TAG = DetailPresenter.class.getSimpleName();
@@ -53,6 +55,15 @@ public class DetailPresenter implements DetailContract.Presenter {
     // update the view
     view.get().displayData(viewModel);
 
+  }
+
+  @Override
+  public void fetchMasterItemData() {
+    MasterItem item = router.getMasterItemFromPreviousScreen();
+    if (item != null) {
+      viewModel.masterItem = item;
+      view.get().displayData(viewModel);
+    }
   }
 
 

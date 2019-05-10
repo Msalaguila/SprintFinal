@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.msalaguila.sprintfinal.app.AppMediator;
+import es.msalaguila.sprintfinal.app.MasterItem;
+import es.msalaguila.sprintfinal.detail.DetailActivity;
 
 public class MasterRouter implements MasterContract.Router {
 
@@ -19,7 +21,7 @@ public class MasterRouter implements MasterContract.Router {
   @Override
   public void navigateToNextScreen() {
     Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, MasterActivity.class);
+    Intent intent = new Intent(context, DetailActivity.class);
     context.startActivity(intent);
   }
 
@@ -32,5 +34,10 @@ public class MasterRouter implements MasterContract.Router {
   public MasterState getDataFromPreviousScreen() {
     MasterState state = mediator.getMasterState();
     return state;
+  }
+
+  @Override
+  public void passMasterItemToNextScreen(MasterItem item) {
+    mediator.setMasterItem(item);
   }
 }
