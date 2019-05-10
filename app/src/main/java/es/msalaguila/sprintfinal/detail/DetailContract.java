@@ -3,6 +3,7 @@ package es.msalaguila.sprintfinal.detail;
 import java.lang.ref.WeakReference;
 
 import es.msalaguila.sprintfinal.app.MasterItem;
+import es.msalaguila.sprintfinal.data.RepositoryContract;
 
 interface DetailContract {
 
@@ -22,10 +23,14 @@ interface DetailContract {
     void fetchData();
 
     void fetchMasterItemData();
+
+    void updateItemAndCLicks();
   }
 
   interface Model {
     String fetchData();
+
+    void updateItemAndClicks(int itemId, RepositoryContract.OnMasterItemUpdatedCallback callback);
   }
 
   interface Router {

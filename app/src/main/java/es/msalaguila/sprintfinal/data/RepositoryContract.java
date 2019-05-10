@@ -13,7 +13,13 @@ public interface RepositoryContract {
     void setMasterItemListAdded(List<MasterItem> itemList);
   }
 
+  interface OnMasterItemUpdatedCallback {
+    void setMasterItemUpdated(MasterItem item, int totalClicks);
+  }
+
   void addNewMasterItem(RepositoryContract.OnMasterItemAddedCallback callback);
 
   void loadMasterItemList(RepositoryContract.OnMasterItemListFetchedCallback callback);
+
+  void updateMasterItem(int id, RepositoryContract.OnMasterItemUpdatedCallback callback);
 }

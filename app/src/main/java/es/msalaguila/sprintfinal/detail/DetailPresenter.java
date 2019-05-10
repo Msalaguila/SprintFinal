@@ -5,6 +5,7 @@ import android.util.Log;
 import java.lang.ref.WeakReference;
 
 import es.msalaguila.sprintfinal.app.MasterItem;
+import es.msalaguila.sprintfinal.data.RepositoryContract;
 
 public class DetailPresenter implements DetailContract.Presenter {
 
@@ -64,6 +65,20 @@ public class DetailPresenter implements DetailContract.Presenter {
       viewModel.masterItem = item;
       view.get().displayData(viewModel);
     }
+  }
+
+  @Override
+  public void updateItemAndCLicks() {
+    int item_id = viewModel.masterItem.id;
+    model.updateItemAndClicks(item_id, new RepositoryContract.OnMasterItemUpdatedCallback() {
+      @Override
+      public void setMasterItemUpdated(MasterItem item, int totalClicks) {
+        viewModel.masterItem = item;
+        viewModel.totalClicks = totalClicks;
+
+        view.get().displayData(viewModel);
+      }
+    });
   }
 
 

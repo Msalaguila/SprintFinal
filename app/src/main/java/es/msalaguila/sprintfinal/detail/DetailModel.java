@@ -24,4 +24,10 @@ public class DetailModel implements DetailContract.Model {
     // Log.e(TAG, "fetchData()");
     return "Hello";
   }
+
+  @Override
+  public void updateItemAndClicks(int itemId, RepositoryContract.OnMasterItemUpdatedCallback callback) {
+    repository.updateMasterItem(itemId, callback);
+  }
+
 }

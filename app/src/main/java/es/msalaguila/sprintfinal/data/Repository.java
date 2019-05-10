@@ -42,4 +42,25 @@ public class Repository implements RepositoryContract {
   public void loadMasterItemList(OnMasterItemListFetchedCallback callback) {
     callback.setMasterItemList(masterItemList);
   }
+
+  @Override
+  public void updateMasterItem(int id, OnMasterItemUpdatedCallback callback) {
+
+    //Buscamos el elemento para actualizarlo
+
+    if (id <= this.id) {
+      for (int i = 0; i < masterItemList.size(); i++) {
+        if (masterItemList.get(i).id == id) {
+          // Aumentamos los clicks totales
+          this.clicksTotales += 1;
+
+          // Aumentamos los clicks del Item en cuestión
+          int clicksItem = masterItemList.get(i).clicks;
+          clicksItem += 1;
+          masterItemList.get(i).clicks = clicksItem;
+          callback.setMasterItemUpdated(masterItemList.get(i), this.clicksTotales);
+        }
+      }
+    }
+  }
 }

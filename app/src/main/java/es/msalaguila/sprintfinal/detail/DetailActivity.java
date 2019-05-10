@@ -55,7 +55,7 @@ public class DetailActivity
   }
 
   public void onUpdateItemButtonClicked(View view) {
-
+    presenter.updateItemAndCLicks();
   }
 
 }
