@@ -52,6 +52,7 @@ public class DetailActivity
     // deal with the data
 
     counterClicksPerItemTextView.setText(String.valueOf(viewModel.masterItem.clicks));
+    totalClicksTextView.setText(String.valueOf(viewModel.totalClicks));
   }
 
   public void onUpdateItemButtonClicked(View view) {
